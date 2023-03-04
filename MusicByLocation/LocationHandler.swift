@@ -10,6 +10,7 @@ import CoreLocation
 
 class LocationHandler: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
+    let geocoder = CLGeocoder()
     @Published var lastKnownLocation: String = " "
     
     override init() {
@@ -24,15 +25,26 @@ class LocationHandler: NSObject, CLLocationManagerDelegate, ObservableObject {
     func requestLocation() {
         manager.requestLocation()
     }
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coordinates = locations.first?.coordinate {
-            lastKnownLocation = "\(coordinates.latitude)"
-        } else {
-            lastKnownLocation = "No valid Location found"
+        if let firstLocation = locations.first {
+            geocoder.reverseGeocodeLocation(firstLocation, completionHandler: { (placemarks, error) in
+                if error != nil {
+                    self.lastKnownLocation = "Could not perform lookup of location from cooridnate information"
+                } else {
+                    if let firstPlacemark = placemarks?[0] {
+                        self.lastKnownLocation = firstPlacemark.locality ?? "Couldn't find locality"
+                    }
+                  }
+             })
         }
     }
+                                            
+                                            
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         lastKnownLocation = "Error Finding Location"
     }
 
 }
+        
