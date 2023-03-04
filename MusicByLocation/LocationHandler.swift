@@ -8,10 +8,15 @@
 import Foundation
 import CoreLocation
 
-class LocationHandler: NSObject, CLLocationManagerDelegate {
+class LocationHandler: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
-    var lastKnownLocation: String = " "
+    @Published var lastKnownLocation: String = " "
     
+    override init() {
+        super.init()
+        manager.delegate =  self
+    }
+ 
     func requestAuthorisation() {
         manager.requestWhenInUseAuthorization()
     }
@@ -20,9 +25,14 @@ class LocationHandler: NSObject, CLLocationManagerDelegate {
         manager.requestLocation()
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let locations.first
+        if let coordinates = locations.first?.coordinate {
+            lastKnownLocation = "\(coordinates.latitude)"
+        } else {
+            lastKnownLocation = "No valid Location found"
+        }
     }
-    func locationManager(_ manager: CLLocationManager, didFailwithError error: Error) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         lastKnownLocation = "Error Finding Location"
     }
+
 }
