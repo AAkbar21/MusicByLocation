@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A8C790529C0EDA300AAB162 /* ItunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8C790429C0EDA300AAB162 /* ItunesAdaptor.swift */; };
 		6A9F689729B2970D00EF1931 /* MusicByLocationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F689629B2970D00EF1931 /* MusicByLocationApp.swift */; };
 		6A9F689929B2970D00EF1931 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F689829B2970D00EF1931 /* ContentView.swift */; };
 		6A9F689B29B2970F00EF1931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F689A29B2970F00EF1931 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A8C790429C0EDA300AAB162 /* ItunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAdaptor.swift; sourceTree = "<group>"; };
 		6A9F689329B2970D00EF1931 /* MusicByLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicByLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9F689629B2970D00EF1931 /* MusicByLocationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationApp.swift; sourceTree = "<group>"; };
 		6A9F689829B2970D00EF1931 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				6A9F689C29B2970F00EF1931 /* Preview Content */,
 				6A9F68C029B32CD200EF1931 /* LocationHandler.swift */,
 				6ADA55AB29B3EE0A004913CE /* StateController.swift */,
+				6A8C790429C0EDA300AAB162 /* ItunesAdaptor.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ADA55AF29B3F454004913CE /* Artist Response.swift in Sources */,
+				6A8C790529C0EDA300AAB162 /* ItunesAdaptor.swift in Sources */,
 				6A9F68C129B32CD200EF1931 /* LocationHandler.swift in Sources */,
 				6A9F689929B2970D00EF1931 /* ContentView.swift in Sources */,
 				6A9F689729B2970D00EF1931 /* MusicByLocationApp.swift in Sources */,

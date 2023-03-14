@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct ArtistResponse: Codable {
-    var resultCount: Int
+    var count: Int
     var results: [Artist]
     
     private enum CodingKeys: String, CodingKey {
-        case resultCount = " resultCount"
+        case count = "resultCount"
         case results
     }
 }
